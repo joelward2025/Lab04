@@ -14,25 +14,32 @@ struct CardView: View {
     var suitRank: String
     var body: some View {
         ZStack {
+            //card
             RoundedRectangle(cornerRadius: 10.0)
                 .aspectRatio(CGSize(width: 2, height: 3), contentMode: .fill)
                 .foregroundStyle(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 3)
                         .foregroundColor(hovering ? .blue : .black))
+            // center
             Text(suitRank)
                 .font(.largeTitle)
+                .foregroundStyle(.black)
             VStack {
+                // top corner
                 HStack {
                     Text(suitRank)
+                        .foregroundStyle(.black)
                         .padding(5)
                     Spacer()
                 }
                 Spacer()
+                // bottom corner
                 HStack {
                     Spacer()
                     Text(suitRank)
                         .padding(5)
+                        .foregroundStyle(.black)
                         .rotationEffect(Angle(degrees: 180))
                 }
             }
